@@ -5,11 +5,11 @@ import "sync"
 var DefaultStatus CacheStatus = NewDefaultCacheStatusManage()
 
 type CacheStatus interface {
-	// 向缓存添加token状态
+	// Put 向缓存添加token状态
 	Put(token string) error
-	// 从缓存中获取token状态 true表示已登录 false表示未登录
+	// Get 从缓存中获取token状态 true表示已登录 false表示未登录
 	Get(token string) bool
-	// 删除token状态
+	// Delete 删除token状态
 	Delete(token string) error
 }
 
